@@ -2,7 +2,7 @@
 Basic CRUD web app with Flask
 
 
-## Flask used features
+## Flask's used features
 
 * URL routing
 * Passing parameters from a URL to code (__dynamic URLs__)
