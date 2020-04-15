@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>Home Page</h1>
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Welcome</h1>
+            <p>Welcome to my blog, this is an example of flask!!</p>
+            <p>Go visit my website <a href="#">WEBSITE</a> and here  <a
+                href="#">OTHER WEBSITE</a></p>
+            <p>
+                <a class="btn btn-primary" href="/posts" role="button">Go to blog posts&raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}

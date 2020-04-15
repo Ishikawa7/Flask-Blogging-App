@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+    <title>Posts</title>
+{% endblock %}
+
+
+
+{% block body %} 
+    <h1>All Posts</h1>
+
+    <hr>
+    <h2>Create new blog post:</h2>
+    <form action='/posts' method='POST'>
+        <label for="title">Title</label> 
+        <input class="form-control" type="text" name='title' id='title' placeholder="Enter title" aria-label="Enter title">
+        <br>
+        <label for="content">Content</label> 
+        <textarea class="form-control" name='content' id="content" aria-label="Enter content" rows="3"></textarea>
+        <br>
+        <label for="author">Author</label>
+        <input class="form-control" type="text" name='author' id='author' placeholder="Enter author name" aria-label="Enter author name">
+        <br>
+    <input type='submit' value='Post'>
+    </form>
+    <hr>
+
+    {% for post in posts %}
+        <br>
+        <h2>{{ post.title}}</h2>
+
+        {% if post.author %}
+            <small> Writter by: {{ post.author }} on {{ post.date_posted }}</small>
+        {% else %}
+            <small> Writter by: author N/A on {{ post.date_posted }}</small>
+        {% endif %}
+        <br>
+        <br>
+
+        <p style="white-space:pre-wrap">{{ post.content }}</p>
+        <a class="btn btn-danger" href="/posts/delete/{{ post.id }}">Delete</a>
+        <a class="btn btn-primary" href="/posts/edit/{{ post.id }}">Edit</a>
+        <br>
+        <hr>
+    {% endfor %}
+
+{% endblock %}
